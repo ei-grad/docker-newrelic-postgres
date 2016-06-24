@@ -15,7 +15,11 @@ Logging:
     verbose:
       format: '%(levelname) -10s %(asctime)s %(process)-6d %(processName) -15s %(threadName)-10s %(name) -25s %(funcName) -25s L%(lineno)-6d: %(message)s'
   loggers:
-    newrelic-plugin-agent:
+    newrelic_plugin_agent:
+      level: INFO
+      propagate: True
+      handlers: [console]
+    newrelic_plugin_agent.plugins.postgresql:
       level: INFO
       propagate: True
       handlers: [console]
